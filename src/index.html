@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="margin: 20px; background: black">
+
+<canvas id="c1" style="visibility: visible"></canvas>
+<canvas id="c2" style="visibility: visible"></canvas>
+<canvas id="c3"></canvas>
+
+<script>
+    // *** CONFIGURATION *****************
+    const img_src = "2.png";
+    const img_width = 804;
+    const img_height = 2396;
+    const step_x = 11;
+    const step_y = 12;
+    // ***********************************
+
+    // Source
+    const c1 = document.getElementById("c1");
+    c1.width = img_width;
+    c1.height = img_height;
+    const x1 = c1.getContext("2d");
+
+    const paintResult = (x3, x, y) => {
+        let nr_checked = 0;
+        let nr_yellow = 0;
+        let nr_lightblue = 0;
+        let nr_darkblue = 0;
+        let nr_red = 0;
+        let nr_purple = 0;
+        let nr_other = 0;
+
+        // Check all pixels inside the "phosphor", start right bottom corner
+        for (let j = 1; j < step_y; j++) {
+            for (let i = 1; i < step_x; i++) {
+                const data = x1.getImageData(x-i, y-j, 1, 1).data;
+                const px = {r: data[0], g: data[1], b: data[2]};
+                //console.log(`R: ${px.r}, G: ${px.g}, B: ${px.b}`);
+
+                if (px.r > 100 && px.g > 100 && px.b < 100) {
+                    nr_yellow++;
+                // } else if (px.r > 90 && px.g > 100 && px.b > 180) {
+                } else if (px.r > 70 && px.g > 80 && px.b > 160) {
+                    nr_lightblue++;
+                } else if (px.r < 20 && px.g > 80 && px.b > 120) {
+                    nr_darkblue++;
+                } else if (px.r > 120 && px.g < 100 && px.b < 50) {
+                    nr_red++;
+                } else if (px.r < 60 && px.g < 50 && px.b > 130) {
+                    nr_purple++;
+                } else {
+                    nr_other++;
+                }
+
+                nr_checked++;
+            }
+        }
+
+        // console.log(`nr_checked: ${nr_checked}, nr_yellow: ${nr_yellow}`);
+
+        // Find the dominant color in the phosphor. de-boost black
+        const arr = [nr_yellow, nr_lightblue, nr_darkblue, nr_red, nr_purple, nr_other-15];
+        const i = arr.indexOf(Math.max(...arr));
+
+        if (i === 0) {
+            x3.fillStyle = "#EEEE00";
+        } else if (i === 1) {
+            x3.fillStyle = "#88BBEE";
+        } else if (i === 2) {
+            x3.fillStyle = "#00AAEE";
+        } else if (i === 3) {
+            x3.fillStyle = "#EE3300";
+        } else if (i === 4) {
+            x3.fillStyle = "#332288";
+        } else if (i === 5) {
+            x3.fillStyle = "#000000";
+        }
+
+        x3.fillRect(Math.round(x/step_x)-1, Math.round(y/step_y)-1, 1, 1);
+    }
+
+    const image = new Image();
+    image.src = img_src;
+    image.onload = () => {
+        x1.drawImage(image, 0, 0);
+
+        // Grid
+        const c2 = document.getElementById("c2");
+        c2.width = img_width;
+        c2.height = img_height;
+        const x2 = c2.getContext("2d");
+
+        // Result
+        const c3 = document.getElementById("c3");
+        c3.width = img_width; // Math.ceil(img_width/step_x);
+        c3.height = img_height; // Math.ceil(img_height/step_y);
+        const x3 = c3.getContext("2d");
+
+        let phosphors_w = 0;
+        let phosphors_h = 0;
+
+        for (let y = 0; y <= c1.height; y++) {
+            for (let x = 0; x <= c1.width; x++) {
+                if (x % step_x === 0) {
+                    x2.fillStyle = "red";
+
+                    if (y === c1.height) {
+                        phosphors_w++;
+                    }
+                } else if (y % step_y === 0) {
+                    x2.fillStyle = "red";
+
+                    if (x === c1.width) {
+                        phosphors_h++;
+                    }
+                } else {
+                    const data = x1.getImageData(x, y, 1, 1).data;
+                    const px = {r: data[0], g: data[1], b: data[2]};
+                    //console.log(`R: ${px.r}, G: ${px.g}, B: ${px.b}`);
+
+                    x2.fillStyle = `rgba(${px.r}, ${px.g}, ${px.b}, 255)`;
+                }
+
+                x2.fillRect(x, y, 1, 1);
+
+                if (x % step_x === 0 && y % step_y === 0) {
+                    paintResult(x3, x, y);
+                }
+            }
+        }
+
+        console.log(`phosphors_w: ${phosphors_w}, phosphors_h: ${phosphors_h}`);
+    }
+</script>
+
+</body>
+</html>
