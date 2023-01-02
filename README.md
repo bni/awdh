@@ -10,7 +10,7 @@ There is a photo of a screen where individual phosphors can be seen, in the Amig
 
 Work in progress displayed on NTSC screen (View full size):
 
-![NTSC aspect corrected](https://raw.github.com/bni/awdh/master/awdh_aspect.png)
+![NTSC aspect corrected](https://raw.github.com/bni/awdh/main/awdh_aspect.png)
 
 Workflow: Automotated to get a rough draft with correct proportions, then lots of manual fix-up.
 
