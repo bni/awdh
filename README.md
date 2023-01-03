@@ -1,18 +1,27 @@
 # Andy Warhols Debbie Harry portrait from 1985/1986
 
-## R E C O N S T R U C T I O N
+## Reconstruction of this historic digital image
 
-Attempt to reconstruct the original as close as possible, of this historic digital image.
+Original file was most likely lost in the sands of time.
 
-Original file/floppy was most likely lost in the sands of time.
+There is a photo of the image on a CRT screen, where individual phosphors can be seen, in the Amiga World Magazine from January 1986.
 
-There is a photo of a screen where individual phosphors can be seen, in the Amiga World Magazine from January 1986:
+![Fragments](https://raw.github.com/bni/awdh/main/fragments.png)
 
-Work in progress displayed on NTSC screen (View full size):
+## Work in progress displayed on simulated NTSC screen (View full size)
 
-![NTSC aspect corrected](https://raw.github.com/bni/awdh/main/awdh_aspect.png)
+![Aspect](https://raw.github.com/bni/awdh/main/awdh_aspect.png)
 
-Workflow: Automotated to get a rough draft with correct proportions, then lots of manual fix-up.
+Work in progress in IFF/ILBM format: [awdh.iff](https://raw.github.com/bni/awdh/main/awdh.iff)
+
+## Workflow
+Automated sampling to get a rough draft with correct proportions.
+
+Manual fix-up in Deluxe Paint III. Using zoomed photo fragments as pixel reference.
+
+Missing parts guessed with help of other photos.
+
+Not enough info exists to get a 100% authentic result, but maybe close to 95%.
 
 ## Known info
 
