@@ -6,7 +6,7 @@ Original file is not available to the public as of August 2024.
 
 However, there is a photo of the image on a CRT screen, where individual phosphors can be seen.
 
-![Source photo](https://raw.github.com/bni/awdh/main/src/source.png)
+![Source photo](https://raw.github.com/bni/awdh/main/references/excl-missing-andy-warhol-portrait-86405085.jpg)
 
 ## Work in progress, aspect only correct when viewing on a real NTSC Amiga CRT screen
 
