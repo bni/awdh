@@ -2,26 +2,18 @@
 
 ## Reconstruction of this historic digital image
 
-Original file was most likely lost in the sands of time.
+Original file is not available to the public as of August 2024.
 
-There is a photo of the image on a CRT screen, where individual phosphors can be seen, in the Amiga World Magazine from January 1986.
+However, there is a photo of the image on a CRT screen, where individual phosphors can be seen.
 
-![Fragments](https://raw.github.com/bni/awdh/main/fragments.png)
+![Source photo](https://raw.github.com/bni/awdh/main/src/source.png)
 
-## Work in progress displayed on simulated NTSC screen (View full size)
+## Work in progress, aspect only correct when viewing on a real NTSC Amiga CRT screen
 
-![Aspect](https://raw.github.com/bni/awdh/main/awdh_aspect.png)
-
-Work in progress in IFF/ILBM format: [awdh.iff](https://raw.github.com/bni/awdh/main/awdh.iff)
+![Work in progress](https://raw.github.com/bni/awdh/main/awdh.png)
 
 ## Workflow
-Automated sampling to get a rough draft with correct proportions.
-
-Manual fix-up in Deluxe Paint III. Using zoomed photo fragments as pixel reference.
-
-Missing parts guessed with help of other photos.
-
-Not enough info exists to get a 100% authentic result, but maybe close to 95%.
+Automated sampling to recreate pixel perfect image with correct proportions.
 
 ## Known info
 
@@ -33,6 +25,11 @@ Not enough info exists to get a 100% authentic result, but maybe close to 95%.
 | **Palette**      | Unknown                | Best guess     |
 
 ## Links
+
 [The moment Andy Warhol went digital by painting Debbie Harry on an Amiga Computer](https://faroutmagazine.co.uk/andy-warhol-debbie-harry-blondie-commodore-amiga-1985/)
 
 [Amiga World Magazine (January 1986)](https://archive.org/details/amiga-world-1986-01)
+
+[Page Six (August 2024)](https://pagesix.com/2024/07/29/lifestyle/long-lost-andy-warhol-portrait-of-debbie-harry-up-for-sale/)
+
+[Interview with Commodore Engineer Jeff Bruette](https://www.youtube.com/watch?v=2FV2_WbQrBE&t=19s)
